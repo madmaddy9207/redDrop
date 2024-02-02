@@ -1,0 +1,142 @@
+
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:400,400i,600,600i');
+            .card{
+                background: #fff;
+                width: 70%;
+                max-width:520px;
+                height: 500px;
+                margin: 0 auto;
+                position: relative;
+                margin-top: 8%;
+                border-radius: 10px;
+                box-shadow: 2px 5px 20px rgb(119, 119, 119,.5);
+            }
+            .reqh{
+              font-weight:900;
+              text-align:center;
+              text-shadow:0 2px 3px rgba(0,0,0,0.2);
+              width:100%;
+              padding:5% 10% 0 10%;
+            }
+            .reqh h3{
+              font-family: 'Josefin Sans', sans-serif;
+            }
+            .btn  {
+                border: none;
+                padding: 7px 202px;
+                font-size: 1rem;
+                margin-top: 16px;
+                background: transparent;
+                color: #fd5c63;
+                text-transform: uppercase;
+                border: 2px solid #fd5c63;
+                cursor: pointer;
+                transition: all 0.7s;
+                border-radius: 100px;
+              }
+        
+              .btn:hover {
+                color: #000;
+                background: #fd5c63;
+              }
+              .second  {
+                transition: all 0.7s;
+                z-index: -1;
+              }
+              .third {
+                transition: all 0.7s;
+                z-index: -1;
+              }
+             
+              .btn .second {
+                content: "";
+                position: absolute;
+                left: 25%;
+                top: -100%;
+                height: 100%;
+                width: 25%;
+                background: #fd5c63;
+              }
+        
+              .btn:hover .second {
+                top: 0;
+                left: 50%;
+              }
+        
+              .btn .third {
+                content: "";
+                position: absolute;
+                left: 50%;
+                height: 100%;
+                top: 100%;
+                width: 25%;
+                background: #fd5c63;
+              }
+        
+              .btn:hover .third {
+                top: 0;
+                left: 25%;
+              }
+
+
+
+              .form-control-1 {
+                width: 30%;
+                position: relative;
+                height: 60px;
+                overflow: hidden;
+              }
+              
+              .wra{
+                width: 517px;
+                background: #fff;
+                padding: 17px;
+                /* box-shadow: 0px 0px 10px rgba(0,0,0,0.1); */
+              }
+              .wrapper .input-data{
+                height: 40px;
+                width: 100%;
+                position: relative;
+              }
+              .wra .input-data input{
+                height: 100%;
+                width: 100%;
+                border: none;
+                font-size: 17px;
+                border-bottom: 2px solid silver;
+
+              }
+             .input-data input:focus ~ label,
+             .input-data input:valid ~ label{
+              transform: translateY(-20px);
+              font-size: 15px;
+              color: #4158d0;
+             }
+              .wra .input-data label{
+                position: absolute;
+                bottom: -5px;
+                left: 15px;
+                color: grey;
+                pointer-events: none;
+              }
+              .wra .input-data .underline{
+                position: absolute;
+                bottom: 0px;
+                height: 2px;
+                width: 100%;
+                background: gray;
+
+              }
+              .input-data .underline::before{
+                position: absolute;
+                content: "";
+                height: 100%;
+                width: 100%;
+                background: #4158d0;
+                transform: scaleX(0);
+                transition: transform 0.3s ease;
+              }
+              .input-data input:focus ~ .underline::before,
+              .input-data input:valid ~ .underline::before{
+                transform: scaleX(1);
+              }

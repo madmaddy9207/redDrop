@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container">
+    <form method="POST" enctype="multipart/form-data" style="margin-top: 11%;"> {% csrf_token %}
+ 
+<div class="row mt-1">
+    <div class="form-group col-md-12">
+        <label><i style="font-weight: bold;"> Name</i></label>
+        <input type="text" class="form-control" name="name" id="first_name" value="{{blood_req.name}}">
+    </div>
+ 
+</div>
+ 
+<div class="row mt-1">
+    <div class="form-group col-md-6">
+        <label><i style="font-weight: bold;">Email ID</i></label>
+        <input type="email" class="form-control" name="email" id="email" value="{{blood_req.email}}">
+    </div>
+    <div class="form-group col-md-6">
+        <label><i style="font-weight: bold;">Contact Number</i></label>
+        <input type="tel" class="form-control" name="phone" id="phone" value="{{blood_req.phone}}">
+    </div>
+</div>
+ 
+<div class="row mt-1">
+    <div class="form-group col-md-6">
+        <label><i style="font-weight: bold;">State</i></label>
+        <input type="text" class="form-control" name="state" id="state" value="{{blood_req.state}}">
+    </div>
+    <div class="form-group col-md-6">
+        <label><i style="font-weight: bold;">City</i></label>
+        <input type="text" class="form-control" name="city" id="city" value="{{blood_req.city}}">
+    </div>
+</div>
+ 
+<div class="row mt-1">
+    <div class="form-group col-md-12">
+        <label><i style="font-weight: bold;">Address</i></label>
+        <textarea class="form-control" id="address" name="address" rows="3">{{blood_req.address}}</textarea>
+    </div>
+</div>
+ 
+<div class="row mt-2">
+<div class="form-group col-md-6">
+    <label><i style="font-weight: bold;">Gender</i></label>
+    <input type="text" class="form-control" name="gender" value="{{blood_req.gender}}" >
+  </div>
+  <div class="form-group col-md-6">
+    <label><i style="font-weight: bold;">Blood Group</i></label>
+    <select class="form-control" name="blood">
+        <option value="A-" {% if blood_req.blood == 'A-' %}selected{% endif %}>A-</option>
+        <option value="A+" {% if blood_req.blood == 'A+' %}selected{% endif %}>A+</option>
+        <option value="B-" {% if blood_req.blood == 'B-' %}selected{% endif %}>B-</option>
+        <option value="B+" {% if blood_req.blood == 'B+' %}selected{% endif %}>B+</option>
+        <option value="AB-" {% if blood_req.blood == 'AB-' %}selected{% endif %}>AB-</option>
+        <option value="AB+" {% if blood_req.blood == 'AB+' %}selected{% endif %}>AB+</option>
+        <option value="O-" {% if blood_req.blood == 'O-' %}selected{% endif %}>O-</option>
+        <option value="O+" {% if blood_req.blood == 'O+' %}selected{% endif %}>O+</option>
+    </select>
+</div>
+ 
+<div class="row mt-1">
+   
+    <div class="form-group col-md-6" style=" width: 364px;padding: 33px 11px;margin-left: 23px;">
+        <label style="font-weight: bold;">Date</label>
+        <input type="date" class="form-control" id="date" name="date" value="{{blood_req.dob}}" >
+    </div>
+</div>
+
+<div>
+    <button type="submit" class="btn edit-btn btn-primary">Update Request</button>
+<div>
+</form>
+</div>
+
+<style>
+    .edit-btn{
+        color:#000 !important;
+      }
+      .edit-btn:hover{
+        color:#fff !important;
+      }
+</style>
+{% endblock %}

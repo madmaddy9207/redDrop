@@ -1,0 +1,65 @@
+{% load static %}
+<div class="navigation-bar">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <nav class="navbar navbar-expand-lg">
+                    <a class="navbar-brand" href="#">
+                        <img class="small--hide" src="{% static '/images/redDroplogo.avif' %}" alt="RedDrop Inc." itemprop="logo">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="toggler-icon"></span>
+                        <span class="toggler-icon"></span>
+                        <span class="toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul id="nav" class="navbar-nav ml-auto">
+                            <li class="nav-item active">
+                                <a class="page-scroll" href="{% url 'home' %}">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="page-scroll" href="{% url 'home'%}#about">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="page-scroll" href="{% url 'home'%}#service">Blood</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="page-scroll" href="{% url 'request_blood'%}">Request Blood</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="page-scroll" href="{% url 'find_donor'%}">Find Donor</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="page-scroll" href="#contact">Contact</a>
+                            </li>
+                        </ul> <!-- navbar nav -->
+                    </div>
+                    <!-- <div class="navbar-btn ml-20 d-none d-sm-block">
+                        <a class="main-btn" href="loginPage"> Login</a>
+                    </div> -->
+                    {% if user.id is None %}
+                       
+                        <div class="navbar-btn ml-20 d-none d-sm-block">
+                            <a class="main-btn" href="{% url 'login' %}"> Login</a>
+                        </div>
+                        
+                        {% else %}
+                        <div  class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul id="nav" class="navbar-nav ml-auto">
+                                <li class="nav-item">
+                                    <a class="page-scroll" href="{% url 'profile' %}">Profile</a>
+                                </li>
+                            </ul>
+                        </div>
+                      
+                        <div class="navbar-btn ml-20 d-none d-sm-block">
+                            <a class="main-btn" href="{% url 'logout' %}"> Logout</a>
+                        </div>
+                       
+                    {% endif %}
+                </nav> <!-- navbar -->
+            </div>
+        </div> <!-- row -->
+    </div> <!-- container -->
+</div> <!-- navigation bar -->

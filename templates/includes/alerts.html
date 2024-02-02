@@ -1,0 +1,42 @@
+{% load static %}
+{% if messages %}
+    {% for message in messages %}
+        <div id="message" class="container">
+                <div {% if messages.tags %} class="alert alert-{{ message.tags }}"{% endif %} class="alert" data-dismiss="alert" role="alert">
+                <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span></button>
+                {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %} Error: {% endif %}
+                {{ message }}
+            </div>
+        </div>
+    {% endfor %}
+
+{% endif %}
+
+<style>
+    .alert {
+        background: #00fb154f;
+        width: 100%;
+        height: 30px;
+        padding-top: 3px;
+        margin-top: 15px;
+        margin-bottom: 0;
+        /* z-index: 2; */
+        position: relative;
+        color:#fff;
+    }
+</style>
+<script>
+    document.querySelectorAll('.alert button.close').forEach(function(button) {
+        button.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent default link behavior
+            button.parentNode.classList.add('d-none'); // Hide the alert
+        });
+    });
+
+    // Automatically close the alert after 2000 milliseconds (2 seconds)
+setTimeout(function() {
+    document.querySelectorAll('.alert').forEach(function(alert) {
+        alert.classList.add('d-none');
+    });
+}, 3000);
+    </script>

@@ -1,0 +1,474 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <!--====== PRELOADER PART START ======-->
+
+    <div class="preloader">
+        <div class="loader_34">
+            <div class="ytp-spinner">
+                <div class="ytp-spinner-container">
+                    <div class="ytp-spinner-rotator">
+                        <div class="ytp-spinner-left">
+                            <div class="ytp-spinner-circle"></div>
+                        </div>
+                        <div class="ytp-spinner-right">
+                            <div class="ytp-spinner-circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--====== PRELOADER ENDS START ======-->
+
+    <!--====== HEADER PART START ======-->
+
+    <header id="home" class="header-area pt-100">
+
+        <div class="shape header-shape-one">
+            <img src="{% static '/images/banner/shape/shape-1.png' %}" alt="shape">
+        </div> <!-- header shape one -->
+
+        <div class="shape header-shape-tow animation-one">
+            <img src="{% static '/images/banner/shape/shape-2.png' %}" alt="shape">
+        </div> <!-- header shape tow -->
+
+        <div class="shape header-shape-three animation-one">
+            <img src="{% static '/images/banner/shape/shape-3.png' %}" alt="shape">
+        </div> <!-- header shape three -->
+
+        <div class="shape header-shape-fore">
+            <img src="{% static '/images/banner/shape/shape-4.png' %}" alt="shape">
+        </div> <!-- header shape three -->
+
+    
+
+        <div class="header-banner d-flex align-items-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-8 col-lg-9 col-sm-10">
+                        <div class="banner-content">
+                            <!-- <h4 class="sub-title wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="1s">In here</h4> -->
+                            <h1 class="banner-title mt-10 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="2s">Your <span>Lifesaving </span>Journey Begins Here</h1>
+                            <a class="banner-contact mt-25 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="2.3s"  href="loginPage" onclick="signup()">Register Now</a>
+                        </div> <!-- banner content -->
+                    </div>
+                </div> <!-- row -->
+            </div> <!-- container -->
+            <div class="banner-image bg_cover" style="background-image: url(../static/images/banner/homebanner.png)"></div>
+        </div> <!-- header banner -->
+
+    </header>
+
+    <!--====== HEADER PART ENDS ======-->
+
+    <!--====== ABOUT PART START ======-->
+
+    <section id="about" class="about-area pt-80 pb-130">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="about-image mt-50 clearfix">
+                        <div class="single-image float-left">
+                            <img src="https://i.pinimg.com/564x/17/f5/6c/17f56cc7e98544b843e146b06f5b282e.jpg" alt="About">
+                        </div> <!-- single image -->
+                        <div data-aos="fade-right" class="about-btn">
+                            <a class="main-btn" href="#"><span>27</span> Years Experience</a>
+                        </div>
+                        <div class="single-image image-tow float-right">
+                            <img src="https://i.pinimg.com/564x/de/9e/f8/de9ef886b83c875b799b265514570f93.jpg                                                                                                                                                     " alt="About">
+                        </div> <!-- single image -->
+                    </div> <!-- about image -->
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-content mt-45">
+                        <h4 class="about-welcome">About Us </h4>
+                        
+                        <p>
+                            Welcome to the Blood Donation Network, where compassion meets action. Our platform is dedicated to
+                            connecting blood donors with those in need, creating a seamless and efficient process for saving lives.
+                        </p>
+                        <p>
+                            At Blood Donation Network, we believe that every drop counts and that together, we can make a
+                            significant impact on the well-being of individuals and communities. Our user-friendly platform
+                            empowers both donors and recipients to come together and create a network of lifesavers.
+                        </p>
+                        <h4 class="about-welcome">Our Mission</h3>
+                        <p>
+                            Our mission is to simplify the blood donation process, making it accessible to anyone in need. We
+                            strive to create a world where no one has to suffer due to a lack of blood, and where every donor
+                            feels a sense of fulfillment knowing they've made a difference in someone's life.
+                        </p>
+                        <h4  class="about-welcome">Join the Community</h3>
+                        <p>
+                            Join our community of caring individuals who understand the importance of giving back. Whether you're
+                            a potential donor or someone seeking assistance, Blood Donation Network is here for you. Together, we
+                            can create a world where the gift of life is shared generously.
+                        </p>
+                         <a class="main-btn mt-25" href="#">learn more</a>
+                    </div> <!-- about content -->
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </section>
+
+    <!--====== ABOUT PART ENDS ======-->
+
+    <!--====== BLOOD PART END ======-->
+
+    <section id="service" class="services-area pt-125 pb-130 gray-bg">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="section-title text-center pb-20">
+                        <h5 class="sub-title mb-15">Take a look</h5>
+                        <h2 class="title">Blood Type</h2>
+                        <h4>About different blood types</h4>
+                    </div> <!-- section title -->
+                </div>
+            </div> <!-- row -->
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-6 col-sm-8">
+                    <div class="single-services text-center mt-30 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.4s">
+                        <div class="services-icon">
+                            <img src="https://nhsbtdbe.blob.core.windows.net/az766967/6/b/2/2/a/f/6b22af0a9947574e2c9dac9cf6e753332fcc14e5.png" alt="O+">
+                        </div>
+                        <div class="services-content mt-15">
+                            <h4 class="services-title">O positive</h4>
+                            <p class="mt-20">O positive is the most common blood type</p>
+                        </div>
+                    </div> <!-- single services -->
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-8">
+                    <div class="single-services text-center mt-30 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.8s">
+                        <div class="services-icon">
+                            <img src="https://nhsbtdbe.blob.core.windows.net/az766967/7/e/e/3/b/a/7ee3ba72347ef5401ded559ea56d00555ab2ed51.png" alt="O-">
+                        </div>
+                        <div class="services-content mt-15">
+                            <h4 class="services-title">O negative</h4>
+                            <p class="mt-20">O negative donors are often called 'universal donors'.</p>
+                        </div>
+                    </div> <!-- single services -->
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-8">
+                    <div class="single-services text-center mt-30 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="1.2s">
+                        <div class="services-icon">
+                            <img src="https://nhsbtdbe.blob.core.windows.net/az766967/2/2/a/e/1/a/22ae1a6e0e0aa1b1d45d92894fc43cfcec0f06a1.png" alt="A+">
+                        </div>
+                        <div class="services-content mt-15">
+                            <h4 class="services-title">A positive</h4>
+                            <p class="mt-20">A positive is the second most common blood type.</p>
+                        </div>
+                    </div> <!-- single services -->
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-8">
+                    <div class="single-services text-center mt-30 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.4s">
+                        <div class="services-icon">
+                           <img src="https://nhsbtdbe.blob.core.windows.net/az766967/8/4/f/9/1/1/84f911bcb4c6f40fa1bfb6ea362a4d3fa52c1c56.png" alt="A-">
+                        </div>
+                        <div class="services-content mt-15">
+                            <h4 class="services-title">A negative</h4>
+                            <p class="mt-20">A negative is the universal platelet type.</p>
+                        </div>
+                    </div> <!-- single services -->
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-8">
+                    <div class="single-services text-center mt-30 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.8s">
+                        <div class="services-icon">
+                          <img src="https://nhsbtdbe.blob.core.windows.net/az766967/6/7/9/5/1/a/67951a38c4ea387b8f039421ed7e8529f74b13bf.png" alt="B+">
+                        </div>
+                        <div class="services-content mt-15">
+                            <h4 class="services-title">B positive</h4>
+                            <p class="mt-20">Only 8% of donors are B positive but there is always a need for it.</p>
+                        </div>
+                    </div> <!-- single services -->
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-8">
+                    <div class="single-services text-center mt-30 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="1.2s">
+                        <div class="services-icon">
+                            <img src="https://nhsbtdbe.blob.core.windows.net/az766967/4/d/9/b/c/f/4d9bcf782aaf41f2f65d9479347d6bc697db4495.png" alt="B-">
+                        </div>
+                        <div class="services-content mt-15">
+                            <h4 class="services-title">B negative</h4>
+                            <p class="mt-20">Just 2% of donors are B negative, making one of the rarest blood types.</p>
+                        </div>
+                    </div> <!-- single services -->
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-8">
+                    <div class="single-services text-center mt-30 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="1.2s">
+                        <div class="services-icon">
+                            <img src="https://nhsbtdbe.blob.core.windows.net/az766967/a/1/1/6/9/d/a1169d0ce91bf7e2de65a4c8928c7be4e0c4338d.png" alt="AB+">
+                        </div>
+                        <div class="services-content mt-15">
+                            <h4 class="services-title">AB positive</h4>
+                            <p class="mt-20">Around 2% of donors have AB positive blood.</p>
+                        </div>
+                    </div> <!-- single services -->
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-8">
+                    <div class="single-services text-center mt-30 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="1.2s">
+                        <div class="services-icon">
+                            <img src="https://nhsbtdbe.blob.core.windows.net/az766967/1/e/f/f/7/3/1eff732ab0f4227f556d884a7d85c33e78a48140.png" alt="AB-">
+                        </div>
+                        <div class="services-content mt-15">
+                            <h4 class="services-title">AB negative</h4>
+                            <p class="mt-20">AB negative is the rarest of the 8 main blood types.</p>
+                        </div>
+                    </div> <!-- single services -->
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-8">
+                    <div class="single-services text-center mt-30 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="1.2s">
+                        <div class="services-icon">
+                            <img src="https://nhsbtdbe.blob.core.windows.net/az766967/d/8/6/f/9/c/d86f9c7f2d3a4417fd00bc6734f9acb6b74e47db.png" alt="rare">
+                        </div>
+                        <div class="services-content mt-15">
+                            <h4 class="services-title">Rare blood types</h4>
+                            <p class="mt-20">What makes a blood type rare?.</p>
+                        </div>
+                    </div> <!-- single services -->
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </section>
+
+    <!--====== BLOOD PART END ======-->
+
+    <!--====== PROJECT PART START ======-->
+
+    <section id="project" class="project-area pt-125 pb-130">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="section-title text-center pb-50">
+                        <h5 class="sub-title mb-15">Donate</h5>
+                        <h2 class="title">The Blood Donation Process</h2>
+                        <p>The blood donation process from the time you arrive until the time you leave takes about an hour. The donation itself is only about 8-10 minutes on average.</p>
+                    </div> <!-- section title -->
+                </div>
+            </div> <!-- row -->
+        </div>
+        
+        <div class="col-lg-6">
+            <div class="about-content-registration mt-45">
+                <h4 class="about-welcome">Registration </h4>
+            </div>
+         </div>
+         <div class="content-card-with-image">
+            <div class="content-card-main">
+                <div class="object-fit-image-container ">
+                    <img loading="lazy" src="https://www.redcrossblood.org/content/dam/redcrossblood/rcb/donors-with-masks/Donor_registering.jpg.transform/1288/q82/feature/image.jpeg" class="featured-image">
+                    <div class="description_text">    
+                        <ul>
+                            <li>
+                                We’ll sign you in and go over basic eligibility
+                            </li>
+                            <li>
+                                You’ll be asked to show ID, such as your driver’s license
+                            </li>
+                            <li>
+                                You’ll read some information about donating blood
+                            </li>
+                            <li>
+                                We’ll ask you for your complete address.  Your address needs to be complete (including PO Box, street/apartment number) and the place where you will receive your mail 8 weeks from donation
+                            </li>
+                        </ul>
+                     </div>
+                </div>
+                <div class="about-content-registration  mt-45">
+                    <h4 class="about-welcome">Health History </h4>
+                </div>
+                <div class="object-fit-image-container ">
+                    <img loading="lazy" src="https://www.redcrossblood.org/content/dam/redcrossblood/rcb/donate-blood/components/520x295-health-history.jpg.transform/1288/q82/feature/image.jpeg" class="featured-image">
+                    <div class="description_text">       
+                        <ul>
+                            <li>
+                                You’ll answer a few questions about your health history and places you’ve traveled, during a private and confidential interview
+                            </li>
+                            <li>
+                                You’ll tell us about any prescription and/or over the counter medications that may be in your system
+                            </li>
+                            <li>
+                                We’ll check your temperature, pulse, blood pressure and hemoglobin level
+                            </li>
+                        </ul>
+                        </div>
+                </div>
+                <div class="about-content-registration mt-45">
+                    <h4 class="about-welcome">Your Donation </h4>
+                </div>
+                <div class="object-fit-image-container ">
+                    <img loading="lazy" src="https://www.redcrossblood.org/content/dam/redcrossblood/rcb/donate-blood/components/your-donation.jpg.transform/1288/q82/feature/image.jpeg" class="featured-image">
+                    <div class="description_text">     
+                        <ul>
+                            <li>
+                                If you’re donating whole blood, we’ll cleanse an area on your arm and insert a brand new sterile needle for the blood draw. (This feels like a quick pinch and is over in seconds.)
+                            </li>
+                            <li>
+                                Other types of donations, such as platelets, are made using an apheresis machine which will be connected to both arms
+                            </li>
+                            <li>
+                                A whole blood donation takes about 8-10 minutes, during which you’ll be seated comfortably or lying down
+                            </li>
+                            
+                           
+                        </ul>
+                        </div>
+                </div>
+            </div>
+         </div>
+               
+               
+            </div>
+        </div>
+    </section>
+
+    <!--====== PROJECT PART ENDS ======-->
+
+    <!--======  OUR SERVICE PART END ======-->
+
+    <section id="team" class="team-area pt-125 pb-130 gray-bg">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="section-title text-center pb-20">
+                        <h2 class="title">OUR SERVICES</h2>
+                        
+                    </div> 
+                </div>
+            </div>  
+            <div class="elementor-widget-container">
+             
+                <img src='https://i.pinimg.com/564x/d5/aa/08/d5aa08f8cd84fcf785f5c7fa5edd4b32.jpg' width="400" height="300" alt=''>
+               
+                  <p>  <b>Blood Donation Finder</b> <br> Blood Donation Finder service connects you with nearby donors, ensuring a readily available blood supply in emergency situations.</p>
+             
+                <img src='https://i.pinimg.com/564x/1c/bb/b8/1cbbb80955effbae43920f6cf0ac2fba.jpg' width="400" height="300" alt=''>
+               
+                <p>  <b>Blood Type Search</b> <br> Our Blood Type Search service allows you to search for donors based on specific criteria, ensuring a timely response in emergency situations.</p>
+            
+                <img src='https://i.pinimg.com/564x/9d/71/e5/9d71e58fc92a6c6716b117d2a8cb4de4.jpg' width="400" height="300" alt=''>
+                
+                <p><b>Donor Connection</b> <br> Our Donor Connection service connects donors and recipients, fostering a spirit of community and support in the blood donation process.</p>
+            
+        </div>
+           
+            </div>
+        </div> 
+    </section>
+
+    <!-- ====== OUR SERVICE PART END====== -->
+
+   
+
+    <!--====== CONTACT PART START ======-->
+
+    <section id="contact" class="contact-area pt-125 pb-130 gray-bg">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="section-title text-center pb-20">
+                        <h5 class="sub-title mb-15">Contact us</h5>
+                        <h2 class="title">Get In touch</h2>
+                    </div> <!-- section title -->
+                </div>
+            </div> <!-- row -->
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="contact-form">
+                        <form id="contact-form" action="static/contact.php" method="post" data-toggle="validator">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="single-form form-group">
+                                        <input type="text" name="name" placeholder="Your Name" data-error="Name is required." required="required">
+                                        <div class="help-block with-errors"></div>
+                                    </div> <!-- single form -->
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="single-form form-group">
+                                        <input type="email" name="email" placeholder="Your Email" data-error="Valid email is required." required="required">
+                                        <div class="help-block with-errors"></div>
+                                    </div> <!-- single form -->
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="single-form form-group">
+                                        <input type="text" name="subject" placeholder="Subject" data-error="Subject is required." required="required">
+                                        <div class="help-block with-errors"></div>
+                                    </div> <!-- single form -->
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="single-form form-group">
+                                        <input type="text" name="phone" placeholder="Phone" data-error="Phone is required." required="required">
+                                        <div class="help-block with-errors"></div>
+                                    </div> <!-- single form -->
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="single-form form-group">
+                                        <textarea placeholder="Your Mesaage" name="message" data-error="Please,leave us a message." required="required"></textarea>
+                                        <div class="help-block with-errors"></div>
+                                    </div> <!-- single form -->
+                                </div>
+                                <p class="form-message"></p>
+                                <div class="col-md-12">
+                                    <div class="single-form form-group text-center">
+                                        <button type="submit" class="main-btn">send message</button>
+                                    </div> <!-- single form -->
+                                </div>
+                            </div> <!-- row -->
+                        </form>
+                    </div> <!-- row -->
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </section>
+
+    <!--====== CONTACT PART ENDS ======-->
+
+ 
+
+    <!--====== BACK TO TOP PART START ======-->
+
+    <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
+
+    <!--====== BACK TO TOP PART ENDS ======-->
+
+
+
+
+    <!-- row -->
+
+
+
+
+
+    <!--====== jquery js ======-->
+    <script src="{% static '/js/vendor/modernizr-3.6.0.min.js' %}"></script>
+    <script src="static/js/vendor/jquery-1.12.4.min.js"></script>
+
+    <!--====== Bootstrap js ======-->
+    <script src="{% static '/js/bootstrap.min.js' %}"></script>
+
+    <!--====== WOW js ======-->
+    <script src="{% static '/js/wow.min.js' %}"></script>
+
+    <!--====== Slick js ======-->
+    <script src="{% static '/js/slick.min.js' %}"></script>
+
+    <!--====== Scrolling Nav js ======-->
+    <script src="{% static '/js/scrolling-nav.js' %}"></script>
+    <script src="{% static '/js/jquery.easing.min.js' %}"></script>
+
+    <!--====== Aos js ======-->
+    <script src="{% static '/js/aos.js' %}"></script>
+
+
+    <!--====== Main js ======-->
+    <script src="{% static '/js/main.js' %}"></script>
+
+</body>
+
+</html>
+
+{% endblock %}
