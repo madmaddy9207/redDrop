@@ -4,24 +4,6 @@
 {% load static %}
 {% block content %}
 
-{% comment %} 
-<header id="home" class="header-area">
-
-    <div class="shape header-shape-one" style="top: 216px;left: 222px;transform: rotate(124deg); ">
-        <img src="{% static '/images/banner/shape/shape-1.png' %}" alt="shape">
-    </div> <!-- header shape one -->
-
-    
-    </div> <!-- header shape three --> 
-
-    <div class="shape header-shape-fore" style="left: 67%;bottom: -208px;">
-        <img src="{% static '/images/banner/shape/shape-4.png' %}" alt="shape">
-    </div> <!-- header shape three -->
-
-
-
-</header> {% endcomment %}
-
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
  
 <section class="section-content padding-y" style="display: flex;
@@ -118,9 +100,6 @@ background-position: center;">
                     <div class="form-group">
                         <button type="submit" class="btn"> 
                             Register  
-                           
-                            <span class="second"></span>
-                            <span class="third"></span>
                             <div class="fill-container"></div>
                         </button>
                     </div> <!-- form-group// -->      
@@ -128,7 +107,7 @@ background-position: center;">
                     {{ form.non_field_errors }}
                 </form>
             </article><!-- card-body.// -->
-            <p class="text-center mt-4">Have an account? <a href="{% url 'login' %}">Log In</a></p>
+                                
         </div> <!-- card .// -->
         
         

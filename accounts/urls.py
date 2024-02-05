@@ -10,4 +10,9 @@ urlpatterns = [
     path('profile/',views.profile,name='profile'),
     path('edit_profile/',views.edit_profile,name='edit_profile'),
      path('find_donor/',views.find_donor, name='find_donor'),
+
+    path('activate/<uidb64>/<token>/',views.activate, name='activate'),
+    path('forgotPassword/',views.forgotPassword,name='forgotPassword'),
+    path('resetpassword_validate/<str:uidb64>/<str:token>/',views.resetpassword_validate,name='resetpassword_validate'),
+    path('resetPassword/',views.resetPassword,name='resetPassword'),
 ]

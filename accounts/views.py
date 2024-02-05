@@ -1,9 +1,18 @@
 from django.contrib import messages, auth
+from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from django.contrib.auth.decorators import login_required
 from .models import Account
 from .forms import Registrationform
 from .filters import donorFilter
+
+#verification email
+from django.contrib.sites.shortcuts import get_current_site
+from django.template.loader import render_to_string
+from django.utils.http import urlsafe_base64_encode,urlsafe_base64_decode
+from django.utils.encoding import force_bytes
+from django.contrib.auth.tokens import default_token_generator
+from django.core.mail import EmailMessage
 
 # Create your views here.
 def register(request):
@@ -32,9 +41,21 @@ def register(request):
             user.save()
 
             #user Activation
+            current_site = get_current_site(request)
+            mail_subject = 'Please activate your account'
+            message = render_to_string('accounts/account_verifiaction_email.html', {
+                'user' : user,
+                'domain' : current_site,
+                'uid' : urlsafe_base64_encode(force_bytes(user.pk)),
+                'token' : default_token_generator.make_token(user)
+            })
+            to_email = email
+            send_email = EmailMessage(mail_subject,message,to=[to_email])
+            send_email.send()
 
-            messages.success(request, 'Registration Successful')
-            return redirect('register')
+            # messages.success(request, 'Registration Successful')
+
+            return redirect('/accounts/login/?command=verification&email='+email)
 
     else:
         form = Registrationform()
@@ -152,34 +173,118 @@ def find_donor(request):
 
 
 
-# @login_required(login_url='login')
-# def find_donor(request):
-                      
-#         selected_state = request.POST.get("state", "")
-#         print(selected_state)
-#         selected_district = request.POST.get("district", "")
-#         print(selected_district)
-#         selected_blood_type = request.POST.get("blood_type", "")
-#         print(selected_blood_type)
 
-#         donors = Account.objects.all()  
-    
-        
-#         if selected_state:
-#             donors = donors.filter(state__iexact=selected_state)  # Case-insensitive filter
-            
-#         if selected_district:
-#             donors = donors.filter(district__iexact=selected_district)
-        
-#         if selected_blood_type:
-#             donors = donors.filter(blood_type__iexact=selected_blood_type)
-        
+def activate(request, uidb64, token):
+    try:
+        uid = urlsafe_base64_decode(uidb64).decode()
+        user = Account._default_manager.get(pk=uid)
 
-#         if not donors.exists():
-#             message = "No blood donors available in selected location and blood type."
-            
+        if default_token_generator.check_token(user, token):
+            user.is_active = True
+            user.save()
+            messages.success(request, 'Congratulations! Your account is activated.')
+        else:
+            messages.error(request, 'Invalid activation link')
+            return redirect('register')
+    except (TypeError, ValueError, OverflowError, Account.DoesNotExist):
+        messages.error(request, 'Invalid activation link')
+        return redirect('register')
+
+    # Return a redirect response or any other appropriate response
+    return redirect('login')  # Redirect to login page after activation
+
+
+# def forgotPassword(requset):
+#     if requset.method == 'POST':
+#         email = requset.POST['email']
+#         if Account.objects.filter(email=email).exists():
+#             user=Account.objects.get(email__exact=email)
+
+#             # reset password email
+#             current_site = get_current_site(request)
+#             mail_subject = 'Reset Your Password'
+#             message = render_to_string('accounts/reset_password_email.html', {
+#                 'user' : user,
+#                 'domain' : current_site,
+#                 'uid' : urlsafe_base64_encode(force_bytes(user.pk)),
+#                 'token' : default_token_generator.make_token(user)
+#             })
+#             to_email = email
+#             send_email = EmailMessage(mail_subject,message,to=[to_email])
+#             send_email.send()
+
+#             messages.success(requset,'Password Reset email has been send to Your email address.')
+#             return redirect('login')
+
 #         else:
-#             message = ""  # No message when results found
-#             print('4')
-#         context = {"donors": donors, "message": message}
-#         return render(request, 'accounts/find_donor.html', context)
+#             messages.error(requset,'Account does not exists')
+#             return redirect('forgotPassword')
+
+#     return render(requset,'accounts/forgotPassword.html')
+
+
+def forgotPassword(request):
+    if request.method == 'POST':
+        email = request.POST.get('email')  # Use get method to avoid KeyError
+        if Account.objects.filter(email=email).exists():
+            user = Account.objects.get(email=email)
+
+            # Reset password email
+            current_site = get_current_site(request)
+            mail_subject = 'Reset Your Password'
+            message = render_to_string('accounts/reset_password_email.html', {
+                'user': user,
+                'domain': current_site.domain,
+                'uid': urlsafe_base64_encode(force_bytes(user.pk)),
+                'token': default_token_generator.make_token(user)
+            })
+            to_email = email
+            send_email = EmailMessage(mail_subject, message, to=[to_email])
+            send_email.send()
+
+            messages.success(request, 'Password reset email has been sent to your email address.')
+            return redirect('login')
+
+        else:
+            messages.error(request, 'Account does not exist')
+            return redirect('forgotPassword')
+
+    return render(request, 'accounts/forgotPassword.html')
+
+
+
+
+def resetpassword_validate(request, uidb64, token):
+      try:
+        uid = urlsafe_base64_decode(uidb64).decode()
+        user = Account._default_manager.get(pk=uid)
+
+      except (TypeError, ValueError, OverflowError, Account.DoesNotExist):
+       user=None
+
+      if user is not None and default_token_generator.check_token(user, token):
+          request.session['uid'] = uid
+          messages.success(request,'Please reset your Password')
+          return redirect('resetPassword')
+      else:
+          messages.error(request,'This link has been expired')
+          return redirect('login')
+      
+
+def resetPassword(request):
+    if request.method == 'POST':
+        password = request.POST['password']
+        confirm_password = request.POST['confirm_password']
+
+        if password == confirm_password:
+            uid = request.session.get('uid')
+            user = Account.objects.get(pk=uid)
+            user.set_password(password)
+            user.save()
+            messages.success(request,'Password rest successful')
+            return redirect('login')
+        else:
+            messages.error(request,'Password do not match!')
+            return redirect('resetPassword')
+    else:
+      return render(request,'accounts/resetPassword.html')
